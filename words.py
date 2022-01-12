@@ -1,4 +1,3 @@
-
 import random
 
 exception_dict = {0:[],1:[],2:[],3:[],4:[],5:[],6:[],7:[]}
@@ -24,19 +23,21 @@ four_vowels = ['vermillion','cerulean','serenity','arcadian','ethereal',
 #words functions
 
 def exception_checker(word):
-    result = False
-    exception_list = exception_dict.values()
+		result = False
+		exception_list = exception_dict.values()
+		
+		for i in exception_list:
+				if word in i:
+						result = True
 
-    if word in exception_list:
-        result = True
-
-    return result
+		return result
 
 def exception_vowels(word):
-    for key, value in exception_dict.items():    
-        if word == value:
-            vowel = key
-    return vowel
+		vowel = 0
+		for key, value in exception_dict.items():    
+				if word == value:
+						vowel = key
+		return vowel
       
 def exception_adder(vowel_sounds, word):
     if 0 <= vowel_sounds <= 7:
